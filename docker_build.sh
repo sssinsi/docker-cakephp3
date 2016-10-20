@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build sssinsi:test .
+docker build --no-cache -t sssinsi/cake:3.3 .

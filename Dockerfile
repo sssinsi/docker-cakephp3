@@ -4,6 +4,7 @@ MAINTAINER sssinsi
 # Install dependencies
 RUN yum -y update
 RUN yum -y install epel-release
+RUN yum -y install git zip unzip
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 # PHP5.6 version
@@ -19,4 +20,4 @@ RUN mv composer.phar /usr/bin/composer
 # Install app
 RUN rm -rf /var/www/html/*
 ADD ./cake-sample /var/www/html
-RUN cd /var/www/html && /usr/bin/composer install
+RUN cd /var/www/html && /usr/bin/composer install --no-dev
